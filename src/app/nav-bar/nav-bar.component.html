@@ -1,0 +1,55 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-light bg-light" id="linha-horizontal">
+    <div class="container" >
+        <a class="navbar-brand" href="#">Indica Job's (Logo)</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline my-2 my-lg-0">
+                <input type="search" id="txtBusca" name="busca" class="busca" placeholder="Pesquisar">
+            </form>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-home"></i>
+                        Início
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-building"></i>
+                        Empresas
+                    </a>
+                </li>
+                <div id="linha-vertical"></div>             
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="foto img-fluid rounded-circle" src="https://i.imgur.com/MYQKafn.jpg" alt="Foto do Usuário" width="3px" height="3px">
+
+                        Usuário
+                    </a>
+                    <div class="dropdown-menu dp" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">
+                            <i class="fa fa-user-edit mr-2"></i>
+                            Editar perfil
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <i class="fa fa-sign-out-alt mr-2"></i>
+                            Sair
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
