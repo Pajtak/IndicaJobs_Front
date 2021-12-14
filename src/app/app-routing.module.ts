@@ -5,6 +5,7 @@ import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
 
 import { LoginCadastroComponent } from './login-cadastro/login-cadastro.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { TemaComponent } from './tema/tema.component';
 
 const routes: Routes = [
 
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'bem-vindo',component: BemVindoComponent},
   {path:'login-cadastrar', component: LoginCadastroComponent},
   {path:'esqueceu-senha', component: EsqueceuSenhaComponent},
-  {path: 'inicio', component: InicioComponent}
+  {path: 'inicio', component: InicioComponent},
+  {path: 'tema', component: TemaComponent}
 ];
 
 @NgModule({
