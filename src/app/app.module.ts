@@ -12,6 +12,7 @@ import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
 import { EsqueceuSenhaComponent } from './esqueceu-senha/esqueceu-senha.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
+import { PostagensComponent } from './postagens/postagens.component';
 
 
 
@@ -26,6 +27,7 @@ import { TemaComponent } from './tema/tema.component';
     EsqueceuSenhaComponent,
     InicioComponent,
     TemaComponent,
+    PostagensComponent
   ],
   imports: [
     BrowserModule, 
