@@ -11,6 +11,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
 import { EsqueceuSenhaComponent } from './esqueceu-senha/esqueceu-senha.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { PostagensComponent } from './postagens/postagens.component';
 
 
 
@@ -24,6 +25,7 @@ import { InicioComponent } from './inicio/inicio.component';
     BemVindoComponent,
     EsqueceuSenhaComponent,
     InicioComponent,
+    PostagensComponent,
   ],
   imports: [
     BrowserModule, 
