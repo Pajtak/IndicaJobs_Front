@@ -45,73 +45,76 @@
 </mat-sidenav>
 <mat-sidenav-content>
 
-      <div class="container-fluid mat-elevation-z8 ml-5 mt-3">
-
-
 
           <div class="col-md-6 mt-4">
             <nav>
               <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active font-weight-bold cor" id="nav-minhasPostagens-tab" data-toggle="tab"
-                  href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="true">Minhas
-                  postagens</a>
 
-                <a class="nav-item nav-link font-weight-bold cor" id="nav-postagensTema-tab" data-toggle="tab"
-                  href="#postagensTema" role="tab" aria-controls="nav-postagensTema" aria-selected="true">Postagens por
-                  Tema</a>
+
               </div>
             </nav>
 
-
-            <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
-
-              <div class="card-columns">
-                  <div class="card text-center" *ngFor="let item of usuario.postagem">
-                      <div class="card-body">
-                          <h5 class="card-title m-0">{{item.tituloPost}}</h5>
-                          <small class="text-muted">Tema: {{item.tema.descricaoTema}}</small>
-                          <p class="card-text mt-3">{{item.textoPost}}</p>
-                          <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data
-                                  | date: 'HH:mm'}}</small></p>
-
-                          <a [routerLink]="['/postagem-edit', item.idPost]" class="txt hb mr-3" href="">
-                              <i class="fas fa-edit"></i>
-                          </a>
-
-                          <a [routerLink]="['/postagem-delete', item.idPost]" class="txt hr" href="">
-                              <i class="fas fa-trash"></i>
-                          </a>
-
-                      </div>
-                  </div>
-              </div>
-
-          </div>
-
-          <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="nav-postagensTema-tab">
-
-              <div class="card-columns" *ngFor="let list of listaTemas">
-                  <div class="card text-center" *ngFor="let item of list.postagem">
-                      <div class="card-body">
-                          <h5 class="card-title m-0">{{item.tituloPost}}</h5>
-                          <p class="card-text mt-3">{{item.textoPost}}</p>
-                          <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data
-                                  | date: 'HH:mm'}}</small></p>
-                          <p class="card-text"><small class="text-muted"> by: {{item.usuario.nome}}</small></p>
-                      </div>
-                  </div>
-              </div>
-
-          </div>
       </div>
-  </div>
+
 
             <div>
           </div>
+          <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
 
+            <a class="nav-item nav-link active font-weight-bold txt" id="nav-minhasPostagens-tab" data-toggle="tab"
+                href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="true">Minhas
+                Postagens</a>
+                <a  class="nav-item nav-link active  font-weight-bold cor" id="nav-postagensTema-tab" data-toggle="tab"
+                href="#postagensTema" role="tab" aria-controls="nav-postagensTema" aria-selected="false">Postagens por
+                Tema</a>
+</div>
 
+<div class="tab-content mt-5" id="nav-tabContent">
 
+        <div class="tab-pane fade show active" id="minhasPostagens" role="tabpanel"
+            aria-labelledby="nav-minhasPostagens-tab">
 
+            <div class="card-columns">
+              <div class="card text-center" *ngFor="let item of usuario.postagem">
+                  <div class="card-body">
+                      <h5 class="card-title m-0">{{item.tituloPost}}</h5>
+                      <small class="text-muted">Tema: {{item.tema.descricaoTema}}</small>
+                      <p class="card-text mt-3">{{item.textoPost}}</p>
+                      <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data
+                              | date: 'HH:mm'}}</small></p>
+
+                      <a [routerLink]="['/postagem-edit', item.idPost]" class="txt hb mr-3" href="">
+                          <i class="fas fa-edit"></i>
+                      </a>
+
+                      <a [routerLink]="['/postagem-delete', item.idPost]" class="txt hr" href="">
+                          <i class="fas fa-trash"></i>
+                      </a>
+
+                  </div>
+              </div>
+          </div>
+
+        </div>
+        <div class="tab-pane fade show active" id="postagensTema" role="tabpanel"
+        aria-labelledby="nav-postagensTema-tab">
+
+        <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+
+        <div class="card-columns" *ngFor="let list of listaTemas">
+          <div class="card text-center" *ngFor="let item of list.postagem">
+              <div class="card-body">
+                  <h5 class="card-title m-0">{{item.tituloPost}}</h5>
+                  <p class="card-text mt-3">{{item.textoPost}}</p>
+                  <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data
+                          | date: 'HH:mm'}}</small></p>
+                  <p class="card-text"><small class="text-muted"> by: {{item.usuario.nome}}</small></p>
+              </div>
+          </div>
+      </div>
+      </div>
+      </div>
+</div>
 
 </mat-sidenav-content>
 

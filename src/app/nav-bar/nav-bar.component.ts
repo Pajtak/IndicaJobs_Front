@@ -11,7 +11,7 @@ export class NavBarComponent implements OnInit {
 
   nome = environment.nome;
   foto = environment.foto;
-  
+
   constructor() { }
 
   ngOnInit(): void {
