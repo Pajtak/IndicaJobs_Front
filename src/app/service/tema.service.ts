@@ -22,5 +22,8 @@ export class TemaService {
   postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>('https://indicajobs.herokuapp.com/temas', tema, this.token)
   }
+  getByIdTema(idTema: number): Observable<Tema>{
+    return this.http.get<Tema>(`https://indicajobs.herokuapp.com/temas/${idTema}`, this.token)
+  }
 
 }

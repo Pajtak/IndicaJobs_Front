@@ -1,46 +1,120 @@
+
+<button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+  <mat-icon *ngIf="!sidenav.opened">
+    menu
+  </mat-icon>
+  <mat-icon *ngIf="sidenav.opened">
+    close
+  </mat-icon>
+</button>
 <div class="bg">
-  <div class="container">
+<mat-sidenav-container>
+<mat-sidenav #sidenav="matSidenav" class="mat-elevation-z4 d-flex justify-content-center" mode="side" opened>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-4 mt-5">
-          Usuário
-        </div>
-
-        <div class="col-md-6 mt-5">
-          <nav>
-            <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
-              <a class="nav-item nav-link active font-weight-bold cor" id="nav-minhasPostagens-tab" data-toggle="tab"
-                href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="true">Minhas
-                postagens</a>
-
-              <a class="nav-item nav-link font-weight-bold cor" id="nav-postagensTema-tab" data-toggle="tab"
-                href="#postagensTema" role="tab" aria-controls="nav-postagensTema" aria-selected="true">Postagens por
-                Tema</a>
-            </div>
-          </nav>
-
-
-          <hr class="m-0 p-0 cor">
-          <div class="tab-content d-flex justify-content-center" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-home-tab">
-              Minhas
-              postagens</div>
-            <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="nav-profile-tab">Postagem por
-              temas
-            </div>
-          </div>
-
-          <div>
-            <h1>
-
-
-
-            </h1>
-          </div>
-
-        </div>
-      </div>
-    </div>
+  <div class="col-md-12" id="linhaVertical">
   </div>
+
+  <img class="avatar mat-elevation-z8" src="{{foto}}" />
+
+  <h4 class="name">{{nome}}</h4>
+
+  <mat-divider></mat-divider>
+  <p class="designation">Bio:</p>
+
+  <mat-divider></mat-divider>
+
+
+
+  <button mat-button class="menu-button">
+    <mat-icon>star_border</mat-icon>
+    <span>Pontos por Indicação</span>
+  </button>
+  <button mat-button class="menu-button">
+    <mat-icon>work</mat-icon>
+    <span>Empresa</span>
+  </button>
+  <button mat-button class="menu-button">
+    <mat-icon>calendar_today</mat-icon>
+    <span>Nascimento</span>
+  </button>
+  <button mat-button class="menu-button">
+    <mat-icon> location_on</mat-icon>
+    <span>São Paulo</span>
+  </button>
+
+</mat-sidenav>
+<mat-sidenav-content>
+
+      <div class="container-fluid mat-elevation-z8 ml-5 mt-3">
+
+
+
+          <div class="col-md-6 mt-4">
+            <nav>
+              <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active font-weight-bold cor" id="nav-minhasPostagens-tab" data-toggle="tab"
+                  href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="true">Minhas
+                  postagens</a>
+
+                <a class="nav-item nav-link font-weight-bold cor" id="nav-postagensTema-tab" data-toggle="tab"
+                  href="#postagensTema" role="tab" aria-controls="nav-postagensTema" aria-selected="true">Postagens por
+                  Tema</a>
+              </div>
+            </nav>
+
+
+            <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+
+              <div class="card-columns">
+                  <div class="card text-center" *ngFor="let item of usuario.postagem">
+                      <div class="card-body">
+                          <h5 class="card-title m-0">{{item.tituloPost}}</h5>
+                          <small class="text-muted">Tema: {{item.tema.descricaoTema}}</small>
+                          <p class="card-text mt-3">{{item.textoPost}}</p>
+                          <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data
+                                  | date: 'HH:mm'}}</small></p>
+
+                          <a [routerLink]="['/postagem-edit', item.idPost]" class="txt hb mr-3" href="">
+                              <i class="fas fa-edit"></i>
+                          </a>
+
+                          <a [routerLink]="['/postagem-delete', item.idPost]" class="txt hr" href="">
+                              <i class="fas fa-trash"></i>
+                          </a>
+
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="nav-postagensTema-tab">
+
+              <div class="card-columns" *ngFor="let list of listaTemas">
+                  <div class="card text-center" *ngFor="let item of list.postagem">
+                      <div class="card-body">
+                          <h5 class="card-title m-0">{{item.tituloPost}}</h5>
+                          <p class="card-text mt-3">{{item.textoPost}}</p>
+                          <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data
+                                  | date: 'HH:mm'}}</small></p>
+                          <p class="card-text"><small class="text-muted"> by: {{item.usuario.nome}}</small></p>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+            <div>
+          </div>
+
+
+
+
+
+</mat-sidenav-content>
+
+</mat-sidenav-container>
+
 </div>

@@ -22,7 +22,9 @@ export class AuthService {
   cadastrar(usuario: Usuario): Observable<Usuario>{
     return this.http.post<Usuario>('https://indicajobs.herokuapp.com/usuarios/cadastrar', usuario)
   }
-
+  getByIdUsuario(idUsuario: number): Observable<Usuario>{
+    return this.http.get<Usuario>('https://indicajobs.herokuapp.com/usuarios/${idUsuario}')
+  }
   logado(){
     let ok = false
 

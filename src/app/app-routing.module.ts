@@ -1,3 +1,4 @@
+import { PostagensComponent } from './postagens/postagens.component';
 import { EsqueceuSenhaComponent } from './esqueceu-senha/esqueceu-senha.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'login-cadastrar', component: LoginCadastroComponent},
   {path:'esqueceu-senha', component: EsqueceuSenhaComponent},
   {path: 'inicio', component: InicioComponent},
-  {path: 'tema', component: TemaComponent}
+  {path: 'tema', component: TemaComponent},
+  {path: 'postagens', component: PostagensComponent}
 ];
 
 @NgModule({
