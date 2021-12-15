@@ -26,4 +26,12 @@ export class TemaService {
     return this.http.get<Tema>(`https://indicajobs.herokuapp.com/temas/${idTema}`, this.token)
   }
 
+  putTema(tema: Tema): Observable<Tema>{
+    return this.http.put<Tema>('https://indicajobs.herokuapp.com/temas', tema, this.token)
+  }
+
+  deleteTema(idTema: number) {
+    return this.http.delete(`https://indicajobs.herokuapp.com/temas/${idTema}`, this.token)
+  }
+
 }

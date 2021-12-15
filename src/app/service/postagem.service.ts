@@ -18,10 +18,20 @@ export class PostagemService {
   getAllPostagens(): Observable<Postagem[]>{
     return this.http.get<Postagem[]>('https://indicajobs.herokuapp.com/postagens', this.token)
   }
+  getByIdPostagem(idPost: number): Observable<Postagem> {
+    return this.http.get<Postagem>(`https://indicajobs.herokuapp.com/postagens/${idPost}`, this.token)
+  }
 
-  postPostagem(postagem: Postagem) : Observable<Postagem>{
+  postPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.post<Postagem>('https://indicajobs.herokuapp.com/postagens', postagem, this.token)
   }
 
+  putPostagem(postagem: Postagem): Observable<Postagem> {
+    return this.http.put<Postagem>('https://indicajobs.herokuapp.com/postagens', postagem, this.token)
+  }
+
+  deletePostagem(idPost: number) {
+    return this.http.delete<Postagem>(`https://indicajobs.herokuapp.com/postagens/${idPost}`, this.token)
+  }
 }
 

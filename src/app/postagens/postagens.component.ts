@@ -42,7 +42,6 @@ export class PostagensComponent implements OnInit {
 
     this.getAllTema()
     this.findByIdUsuario()
-    this.getAllPostagens()
   }
 
   getAllTema(){
