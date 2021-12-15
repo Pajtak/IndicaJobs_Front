@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { ThrowStmt } from '@angular/compiler';
 import { Injectable } from '@angular/core';
@@ -20,5 +21,14 @@ export class AuthService {
 
   cadastrar(usuario: Usuario): Observable<Usuario>{
     return this.http.post<Usuario>('https://indicajobs.herokuapp.com/usuarios/cadastrar', usuario)
+  }
+
+  logado(){
+    let ok = false
+
+    if(environment.token != ''){
+      ok = true
+    }
+    return ok
   }
 }

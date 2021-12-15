@@ -1,1 +1,54 @@
-<p>inicio works!</p>
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z4 d-flex justify-content-center" mode="side" opened>
+
+    <div class="col-md-12" id="linhaVertical">
+    </div>
+
+    <img class="avatar mat-elevation-z8" src="{{foto}}" />
+
+    <h4 class="name">{{nome}}</h4>
+
+    <mat-divider></mat-divider>
+    <p class="designation">Bio:</p>
+
+    <mat-divider></mat-divider>
+
+
+
+    <button mat-button class="menu-button">
+      <mat-icon>star_border</mat-icon>
+      <span>Pontos por Indicação</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>work</mat-icon>
+      <span>Empresa</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>calendar_today</mat-icon>
+      <span>Nascimento</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon> location_on</mat-icon>
+      <span>São Paulo</span>
+    </button>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z4">
+      <div class="row">
+        <div class="button col-md-12">
+          <button class="btn btn-white">Postar</button>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

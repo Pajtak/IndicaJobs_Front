@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../service/auth.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+import { BreakpointObserver } from '@angular/cdk/layout'
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild(MatSidenav) sidenav: MatSidenav;
+
+  nome = environment.nome;
+  foto = environment.foto;
+
+  constructor(
+    private observer: BreakpointObserver) { }
 
   ngOnInit(): void {
   }
 
+  ngAfterViewInit(){
+    this.observer.observe(['(max-width: 800px)']).subscribe((res)=> {
+      if(res.matches) {
+        this.sidenav.mode = 'over';
+        this.sidenav.close();
+      } else {
+        this.sidenav.mode = 'side';
+        this.sidenav.open();
+
+      }
+    })
+  }
 }
