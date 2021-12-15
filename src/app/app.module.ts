@@ -20,6 +20,10 @@ import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
 import { PostagensComponent } from './postagens/postagens.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 
 
 
@@ -34,7 +38,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EsqueceuSenhaComponent,
     InicioComponent,
     TemaComponent,
-    PostagensComponent
+    PostagensComponent,
+    TemaEditComponent,
+    PostagemEditComponent,
+    TemaDeleteComponent,
+    PostagemDeleteComponent
   ],
   imports: [
     BrowserModule,
