@@ -10,6 +10,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout'
 import { environment } from 'src/environments/environment.prod';
 
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
